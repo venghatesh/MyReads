@@ -1,0 +1,9 @@
+node_modules
+yarn.lock
+.DS_Store
+.idea/
+.firebaserc
+firebase.json
+database.rules.json
+functions/
+build/
