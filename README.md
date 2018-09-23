@@ -4,15 +4,14 @@
 
 ## About
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
 
 Application functionality
-1. Searching the books using Book API and add it to the book shelf. To go to the Search page , the main page has got a + Button displayed on the right hand side bottom of the page.
+1. Searching the books using Book API and add it to the book shelf. To go to the Search page , the main page has got a + Button displayed on the right hand side bottom of the page. In the search page , user can choose to move between the three shelves (Currently Reading, Want to Read, Read). In the search page,  if a book is already in a shelf , then the book will be displayed with tick mark on the shelf. User can move between the shelves by choosing the relevant shelf. If the shelf is choose to none, then the book is removed from the shelf.
 2. There are three book shelves. The first shelf is the
   a) Currently Reading
   b) Want to Read
   c) Read
-  We can move the books between these shelves. This is done by using setState API which would trigger state change . This state change could be captured and based on that , the books could be moved to the relevant shelves. 
+  We can move the books between these shelves. This is done by using setState API which would trigger state change . If the user wants to remove the book from all the shelves, then he/she could choose the option none. This state change could be captured and based on that , the books could be moved to the relevant shelves. 
 
 ## Getting Started
 

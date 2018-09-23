@@ -14,15 +14,42 @@ class SearchPage extends Component {
       query: '' // Search String
   };
 
-  handleUpdateQuery(query) {
-      BooksAPI.search(query).then(books => books ? this.setState({ books }) : []);
-      this.setState({ query });
-  }
+handleUpdateQuery(query) {
+
+
+this.setState({ query: query.trim()});
+    if (query.length > 0) {
+      BooksAPI.search(query, 20).then((searchedBooks) => {
+        const displayBooks = searchedBooks && !searchedBooks.hasOwnProperty("error") ? searchedBooks : [];
+        BooksAPI.getAll().then((books) => {
+          for (const displayBook of displayBooks) {
+
+            const shelfBook = books.find(book => book.id === displayBook.id)
+            if (shelfBook){
+              displayBook.shelf = shelfBook.shelf;
+
+            }else{
+              // Not belonging to any shelf.
+              displayBook.shelf = "None";
+
+            }
+
+        }
+        this.setState({ books:displayBooks });
+      })
+      })
+
+    }
+}
 
   handleBookShelf(book, shelf) {
+
     BooksAPI.update(book, shelf)
         .then(() => shelf !== 'none' ? alert(`${book.title} is successfully added to your shelf!`) : null)
         .catch(() => alert('Oops !!! Something went wrong! Please try again!'));
+    book.shelf = shelf
+    this.setState({});
+
   }
 
   renderSearchResults() {
@@ -31,10 +58,10 @@ class SearchPage extends Component {
       if (query) {
           return books.error ?
               <div>No results found</div>
-              : books.map((book, index) => {
+              : books.map((book) => {
                   return (
                       <BooksListDetail
-                          key={index}
+                          key={book.id}
                           book={book}
                           handleBookShelf={this.handleBookShelf.bind(this)}
                       />
