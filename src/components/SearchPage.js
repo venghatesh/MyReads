@@ -30,7 +30,7 @@ this.setState({ query: query.trim()});
 
             }else{
               // Not belonging to any shelf.
-              displayBook.shelf = "None";
+              displayBook.shelf = "none";
 
             }
 
