@@ -6,7 +6,7 @@
 
 
 Application functionality
-1. Searching the books using Book API and add it to the book shelf. To go to the Search page , the main page has got a + Button displayed on the right hand side bottom of the page. In the search page , user can choose to move between the three shelves (Currently Reading, Want to Read, Read). In the search page,  if a book is already in a shelf , then the book will be displayed with tick mark on the shelf. User can move between the shelves by choosing the relevant shelf. If the shelf is choose to none, then the book is removed from the shelf.
+1. Searching the books using Book API and adding it to the book shelf. To go to the Search page , the main page has got a + Button displayed on the right hand side bottom of the page. In the search page , user can choose to move between the three shelves (Currently Reading, Want to Read, Read). In the search page,  if a book is already in a shelf , then the book will be displayed with tick mark on the shelf. User can move between the shelves by choosing the relevant shelf. If the shelf is choose to none, then the book is removed from the shelf.
 2. There are three book shelves. The first shelf is the
   a) Currently Reading
   b) Want to Read
